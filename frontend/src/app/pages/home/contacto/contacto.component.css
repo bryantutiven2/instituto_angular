@@ -1,0 +1,31 @@
+agm-map {
+    height: 300px;
+}
+
+#div_button{
+    width: 100%;
+}
+#boton_enviar{
+    color: white;
+    background-color: #084084;
+}
+h5{
+    font-weight: 500;
+	font-size: 16px;
+    color: #333;
+}
+p{
+    text-align: justify;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+h3{
+    text-transform: uppercase;
+    font-weight: 500;
+	font-size: 18px;
+    color: #333;
+}
+#redes_icon{
+    width: 100%;
+}

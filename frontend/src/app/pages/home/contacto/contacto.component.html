@@ -1,0 +1,69 @@
+<div class="row">
+    <div class=" row col-12">
+        <div class="col-5" id="div_formulario">
+            <h3>Formulario para Contactarnos</h3>
+            <p class="p-3 pr-4">Por favor llene el formulario con sus datos para ponernos en contacto con Ud los más pronto.</p>
+            <form>
+                <div class="form-group row col-12">
+                    <div class="form-group col-6">
+                        <input type="text" class="form-control"placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <div class="form-group col-10">
+                        <input type="email" class="form-control" placeholder="Correo">
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <div class="form-group col-12">
+                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class=" text-center" id="div_button">
+                        <button type="button" class="btn btn-info btn-sm" id="boton_enviar">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-3">
+            <h5 class="mb-3">Campus Académico</h5>
+            <p>Av. José A. Gómez Gault</p>
+            <p>Km. 8.5 vía a Daule.</p>
+            <p>Teléfono:   (593) 04-370 3300</p>
+            <p>Guayaquil – Ecuador.</p>
+            <div class="row text-center">
+                <h4 class="pr-3">
+                    <fa-icon [icon]="faFacebook"></fa-icon>
+                </h4>
+                <h4 class="pr-3">
+                    <fa-icon [icon]="faTwitter"></fa-icon>
+                </h4>
+                <h4 class="pr-3">
+                    <fa-icon [icon]="faYoutube"></fa-icon>
+                </h4>
+            </div>
+        </div>
+        <div class="col-4">
+            <agm-map 
+                [latitude]="lat"
+                [longitude]="lng"
+                [zoom]="zoom"
+                [disableDefaultUI]="true"
+                [zoomControl]="true">
+
+                <agm-marker
+                    [latitude]="lat"
+                    [longitude]="lng">
+                    <agm-info-window>
+                    <strong>Academia Naval Almirante Illingworth</strong>
+                    <p class="pt-2">
+                        <fa-icon [icon]="faMapMarkedAlt"></fa-icon>
+                         Av. José Gómez Gault Frente a, Guayaquil
+                    </p>
+                    </agm-info-window>
+                </agm-marker>
+                </agm-map>
+        </div>
+    </div>
+</div>
