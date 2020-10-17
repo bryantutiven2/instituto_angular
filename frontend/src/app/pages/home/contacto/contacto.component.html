@@ -3,34 +3,40 @@
         <div class="col-5" id="div_formulario">
             <h3>Formulario para Contactarnos</h3>
             <p class="p-3 pr-4">Por favor llene el formulario con sus datos para ponernos en contacto con Ud los más pronto.</p>
-            <form>
+            <form [formGroup] = "formulario_correo" (ngSubmit) = "submit()">
                 <div class="form-group row col-12">
                     <div class="form-group col-6">
-                        <input type="text" class="form-control"placeholder="Nombre">
+                        <input type="text" class="form-control" formControlName = "nombre" placeholder="Nombre">
                     </div>
                 </div>
                 <div class="form-group row col-12">
                     <div class="form-group col-10">
-                        <input type="email" class="form-control" placeholder="Correo">
+                        <input type="email" class="form-control" formControlName = "correo" placeholder="Correo">
                     </div>
                 </div>
                 <div class="form-group row col-12">
                     <div class="form-group col-12">
-                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                        <textarea class="form-control" formControlName = "mensaje" placeholder="Mensaje" required></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class=" text-center" id="div_button">
-                        <button type="button" class="btn btn-info btn-sm" id="boton_enviar">Enviar</button>
+                        <button class="btn btn-info btn-sm" id="boton_enviar"
+                        type="submit" [disabled]="!formulario_correo.valid"
+                            >Enviar</button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-3">
             <h5 class="mb-3">Campus Académico</h5>
-            <p>Av. José A. Gómez Gault</p>
-            <p>Km. 8.5 vía a Daule.</p>
-            <p>Teléfono:   (593) 04-370 3300</p>
+            <p>{{colegio.direccion}}</p>
+            <p><b>Teléfono</b></p>
+            <p *ngFor="let tel of telefonos; index as idx">
+                {{tel.numero}}
+            </p>
+            
+            <!-- <p>Teléfono:   (593) 04-370 3300</p> -->
             <p>Guayaquil – Ecuador.</p>
             <div class="row text-center">
                 <h4 class="pr-3">
@@ -56,10 +62,10 @@
                     [latitude]="lat"
                     [longitude]="lng">
                     <agm-info-window>
-                    <strong>Academia Naval Almirante Illingworth</strong>
+                    <strong>Colegio Provincia de Los Ríos</strong>
                     <p class="pt-2">
                         <fa-icon [icon]="faMapMarkedAlt"></fa-icon>
-                         Av. José Gómez Gault Frente a, Guayaquil
+                         Av. Alfredo Valenzuela, Guayaquil 090306
                     </p>
                     </agm-info-window>
                 </agm-marker>

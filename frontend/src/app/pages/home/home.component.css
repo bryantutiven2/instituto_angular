@@ -11,12 +11,12 @@ h3 {
 	margin: 0 0 20px 0;
 	font-weight: 700;
 	font-size: 28px;
-    color: #333;
+    color: #296A93;
 }
 .linea_hr{
     height: 3px;
     width: 180px;
-    background: linear-gradient(to right, #5ca9fb 0%,  #084084 100%);
+    background: linear-gradient(to right, #5ca9fb 0%,  #1F7CB7 100%);
 }
 
 .hr_nosotros{
@@ -24,7 +24,7 @@ h3 {
     text-align: left;
     margin-left:0;
     height: 3px;
-    background: linear-gradient(to right, #5ca9fb 0%,  #084084 100%);
+    background: linear-gradient(to right, #5ca9fb 0%,  #1F7CB7 100%);
 }
 
 #img_nosotros{

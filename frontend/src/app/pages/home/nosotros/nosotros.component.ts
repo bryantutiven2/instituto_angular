@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarDatosService } from 'src/app/services/cargar-datos/cargar-datos.service'
 
 @Component({
   selector: 'app-nosotros',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NosotrosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _serviceDatos: CargarDatosService
+  ) { }
 
+  colegio: any = []
   ngOnInit(): void {
+    this.datosColegio();
   }
 
+  datosColegio(){
+    this._serviceDatos.getColegio().subscribe(
+      (resp)=>{
+        this.colegio = resp
+      }
+    )
+  }
 }
